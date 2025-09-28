@@ -10,7 +10,6 @@ def download_iris_data():
     print("Iris data seti indirildi ?")
     print(f"Veri boyutu: {df.shape}")
     print(f"Kolonlar: {list(df.columns)}")
-    print(f"Eksik değerler:\n{df.isnull().sum()}")
 
 if __name__ == "__main__":
     download_iris_data()

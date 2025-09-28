@@ -20,11 +20,9 @@ def clean_iris_data(input_path='data/raw/iris.csv',
 
     df_clean.to_csv(output_path, index=False)
         
-    print("✅ Veri temizlendi ve kaydedildi:", output_path)
+    print("Veri temizlendi ve kaydedildi:", output_path)
     print(f"Orijinal boyut: {df.shape}")
     print(f"Temizlenmiş boyut: {df_clean.shape}")
-    print(f"Eksik değerler:\n{df_clean.isnull().sum().sum()} toplam eksik değer")
-    print("Change accepted ?")
 
     features = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species', 'petal_area', 'sepal_area']
     print(f"Model özellikleri: {features}")

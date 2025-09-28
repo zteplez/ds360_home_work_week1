@@ -18,7 +18,7 @@ def train_iris_model(model_type='random_forest'):
     Y = df['species']
 
     X_train, X_test, Y_train_,  Y_test = train_test_split(
-        X,Y,test_size=0.2, random_state=42, stratify=y
+        X,Y,test_size=0.2, random_state=42, stratify=Y
     )
 
     if model_type == 'random_forest':
@@ -58,11 +58,11 @@ def train_iris_model(model_type='random_forest'):
     with open('models/features.json', 'w') as f:
         json.dump(feature_cols, f, indent=2)
     
-    print(f"✅ Model eğitildi: {model_type}")
-    print(f"📊 Accuracy: {accuracy:.4f}")
-    print(f"💾 Model kaydedildi: {model_path}")
+    print(f"Model eğitildi: {model_type}")
+    print(f"Accuracy: {accuracy:.4f}")
+    print(f"Model kaydedildi: {model_path}")
     
-    print("\n📈 Classification Report:")
+    print("\nClassification Report:")
     print(classification_report(Y_test, Y_pred))
     
     return model, metrics
